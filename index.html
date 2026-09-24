@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>いめたん - Image English</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 pb-12">
+  <!-- ヘッダー -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-10">
+    <div class="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl font-black text-indigo-600 tracking-tight">いめたん</span>
+        <span class="text-xs bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full font-medium">Image English</span>
+      </div>
+      <button class="text-sm font-bold text-slate-600 hover:text-indigo-600">マイページ</button>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 pt-6 space-y-8">
+    <!-- 単語メインカード -->
+    <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80">
+      <div class="flex items-baseline gap-3">
+        <h1 class="text-4xl font-extrabold text-slate-900 tracking-wide">abandon</h1>
+        <span class="text-slate-400 font-mono text-sm">/əˈbændən/</span>
+        <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded font-medium">動詞</span>
+      </div>
+      <p class="text-2xl font-bold text-indigo-600 mt-2">捨てる、見捨てる、諦める</p>
+    </section>
+
+    <!-- 【IMAGE】視覚エリア -->
+    <section class="space-y-3">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg font-bold flex items-center gap-2 text-slate-800">
+          <i data-lucide="image" class="w-5 h-5 text-indigo-500"></i>
+          【IMAGE】記憶を刺激するイメージ
+        </h2>
+        <button class="text-xs text-indigo-600 font-bold hover:underline">+ 画像を投稿</button>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
+          <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=80" alt="取り残された古い家屋" class="w-full h-48 object-cover">
+          <div class="p-3 flex-1 flex flex-col justify-between bg-white">
+            <p class="text-xs text-slate-600 font-medium mb-2">取り残された古い家屋（見捨てられたイメージ）</p>
+            <button class="self-start flex items-center gap-1.5 text-xs font-bold text-rose-500 bg-rose-50 hover:bg-rose-100 px-2.5 py-1.5 rounded-full transition-colors">
+              <i data-lucide="heart" class="w-3.5 h-3.5 fill-current"></i> 覚えやすい！ 124
+            </button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
+          <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80" alt="荒涼とした砂漠の道" class="w-full h-48 object-cover">
+          <div class="p-3 flex-1 flex flex-col justify-between bg-white">
+            <p class="text-xs text-slate-600 font-medium mb-2">荒涼とした砂漠にポツンとある道（置き去りのイメージ）</p>
+            <button class="self-start flex items-center gap-1.5 text-xs font-bold text-rose-500 bg-rose-50 hover:bg-rose-100 px-2.5 py-1.5 rounded-full transition-colors">
+              <i data-lucide="heart" class="w-3.5 h-3.5 fill-current"></i> 覚えやすい！ 89
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 【MUSIC】聴覚エリア -->
+    <section class="space-y-3">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg font-bold flex items-center gap-2 text-slate-800">
+          <i data-lucide="music" class="w-5 h-5 text-indigo-500"></i>
+          【MUSIC】この単語が聴こえる名曲
+        </h2>
+        <button class="text-xs text-indigo-600 font-bold hover:underline">+ 曲を投稿</button>
+      </div>
+      <div class="space-y-3">
+        <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm space-y-3">
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="font-bold text-slate-900 text-base">🎵 "Fix You" — Coldplay</h3>
+              <p class="text-xs text-slate-500 mt-1 bg-slate-50 p-2 rounded border border-slate-100">AppleのCMや映画でも使用された、優しく背中を押してくれる世界的大ヒット曲。</p>
+            </div>
+            <a href="https://open.spotify.com/track/73Spz32vC12C2S2399999" target="_blank" class="flex items-center gap-1 text-xs text-indigo-600 font-bold bg-indigo-50 px-3 py-1.5 rounded-lg hover:bg-indigo-100 shrink-0 ml-2">
+              聴く <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+          </div>
+          <div class="bg-indigo-50/50 border-l-4 border-indigo-400 p-3 rounded-r-lg">
+            <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider block mb-1">サビのフレーズ</span>
+            <p class="text-xs font-mono text-slate-700 whitespace-pre-line leading-relaxed">Lights will guide you home
+And <strong class="text-indigo-600 font-bold bg-indigo-100 px-1 rounded">ignite</strong> your bones
+And I will try to fix you</p>
+          </div>
+          <button class="flex items-center gap-1.5 text-xs font-bold text-rose-500 bg-rose-50 hover:bg-rose-100 px-2.5 py-1.5 rounded-full transition-colors">
+            <i data-lucide="heart" class="w-3.5 h-3.5 fill-current"></i> 覚えやすい！ 215
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 例文エリア -->
+    <section class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm space-y-2">
+      <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider">例文</h2>
+      <p class="font-medium text-slate-800">He had to abandon his car in the snow.</p>
+      <p class="text-xs text-slate-500">彼は雪の中に車を乗り捨てなければならなかった。</p>
+    </section>
+
+    <!-- クイズエリア -->
+    <section class="bg-indigo-900 text-white rounded-2xl p-6 shadow-lg space-y-4">
+      <div class="flex items-center gap-2">
+        <span class="bg-indigo-700 text-indigo-200 text-xs font-bold px-2.5 py-1 rounded-full">CHECK</span>
+        <h2 class="font-bold text-sm">スピード確認クイズ</h2>
+      </div>
+      <p class="font-bold text-lg">「abandon」の意味として最も適切なものはどれ？</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        <button onclick="alert('不正解！')" class="p-3 rounded-xl border border-indigo-700 bg-indigo-800/60 hover:bg-indigo-800 text-left font-medium text-sm">1. 蓄える</button>
+        <button onclick="alert('正解です！')" class="p-3 rounded-xl border border-indigo-700 bg-indigo-800/60 hover:bg-indigo-800 text-left font-medium text-sm">2. 捨てる・見捨てる</button>
+        <button onclick="alert('不正解！')" class="p-3 rounded-xl border border-indigo-700 bg-indigo-800/60 hover:bg-indigo-800 text-left font-medium text-sm">3. 強く主張する</button>
+        <button onclick="alert('不正解！')" class="p-3 rounded-xl border border-indigo-700 bg-indigo-800/60 hover:bg-indigo-800 text-left font-medium text-sm">4. 観察する</button>
+      </div>
+    </section>
+  </main>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>
