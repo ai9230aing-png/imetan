@@ -1,10 +1,17 @@
+import { createClient } from '@supabase/supabase-js'
+
+// Vercelに設定した環境変数からSupabaseに接続するクライアントを作成
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY
+)
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(200).send('LINE Bot Endpoint');
   }
 
   const events = req.body.events || [];
-
   if (events.length === 0) {
     return res.status(200).json({ status: 'ok' });
   }
@@ -14,18 +21,28 @@ export default async function handler(req, res) {
       const userText = event.message.text.trim();
       let replyText = '';
 
-      if (userText === 'クイズ' || userText === '1' || userText === '2' || userText === '3' || userText === '4') {
-        if (userText === '2') {
-          replyText = '🎉 正解です！\nabandon = 捨てる、見捨てる\n\n【イメージ・音楽で記憶を定着】\nhttps://imetan.vercel.app';
-        } else if (userText === 'クイズ') {
-          replyText = '【今日のいめたんクイズ】\n「abandon」の意味として最も適切なものはどれ？\n\n1. 蓄える\n2. 捨てる・見捨てる\n3. 強く主張する\n4. 観察する\n\n番号で答えてね！';
+      // ユーザーが「クイズ」と送信した場合
+      if (userText === 'クイズ') {
+        
+        // Supabaseの 'words' テーブルからデータをすべて取得する
+        const { data: wordsList, error } = await supabase
+          .from('words')
+          .select('*');
+
+        if (error || !wordsList || wordsList.length === 0) {
+          replyText = '現在、データベースに単語が登録されていないか、接続に失敗しています。';
         } else {
-          replyText = '❌ 残念！不正解です。\n正解は「2. 捨てる・見捨てる」でした！\n\n【解説・音楽を見る】\nhttps://imetan.vercel.app';
+          // 登録されている単語の中からランダムに1つ選ぶ
+          const randomWord = wordsList[Math.floor(Math.random() * wordsList.length)];
+          
+          // クイズ形式のメッセージを作成
+          replyText = `【今日のいめたんクイズ】\n「${randomWord.word}」の意味として最も適切なものはどれ？\n\n（ヒント/答えの確認: ${randomWord.meaning}）`;
         }
       } else {
-        replyText = `「${userText}」ですね！\n「クイズ」と送信すると本日の英単語クイズに挑戦できます！`;
+        replyText = `「${userText}」ですね！「クイズ」と送信すると、データベースから英単語クイズが出題されます。`;
       }
 
+      // LINEへ返信を送信
       await fetch('https://api.line.me/v2/bot/message/reply', {
         method: 'POST',
         headers: {
