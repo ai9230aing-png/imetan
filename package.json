@@ -1,6 +1,8 @@
 {
   "name": "imetan",
   "version": "1.0.0",
-  "type": "module",
-  "private": true
+  "dependencies": {
+    "@line/bot-sdk": "^7.5.0",
+    "@supabase/supabase-js": "^2.39.0"
+  }
 }
